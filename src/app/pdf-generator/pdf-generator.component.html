@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h2>Generar PDF</h2>
+  
+    <div class="mb-3">
+      <label for="plantillaSelect" class="form-label">Seleccionar Plantilla</label>
+      <select class="form-select" id="plantillaSelect" [(ngModel)]="selectedPlantillaId">
+        <option *NgFor="let plantilla of plantillas" [value]="plantilla.id">{{ plantilla}}</option>
+      </select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="contextJson" class="form-label">Datos de Contexto (JSON)</label>
+      <textarea class="form-control" id="contextJson" [(ngModel)]="contextJson" rows="5"></textarea>
+    </div>
+  
+    
+    <button class="btn btn-primary" (click)="generarPdf()">Generar PDF</button>
+  
+    <div *NgIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  
+  </div>

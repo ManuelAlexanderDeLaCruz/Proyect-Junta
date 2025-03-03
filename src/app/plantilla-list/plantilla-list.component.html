@@ -1,0 +1,27 @@
+<body  style="color:--bs-danger-bg-subtle ">
+  
+<div  class="container mt-4" >
+  <h1  class="text-center" style="text-shadow: 2px 2px 4px rgba(206, 32, 32, 0.5);" >Bienvedido!!</h1>
+    <h2>ProyectoP</h2>
+    <table class="table table-striped" >
+      <thead >
+        <tr >
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plantilla of plantillas">
+          <td>{{ plantilla.nombre }}</td>
+          <td>{{ plantilla.tipo }}</td>
+          <td>{{ plantilla.version }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deletePlantilla(plantilla.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button routerLink="/carta" class="btn btn-primary">Crear Plantilla</button>
+  </div>
+</body>

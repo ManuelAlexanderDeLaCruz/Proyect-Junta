@@ -1,0 +1,73 @@
+<div class="container mt-4">
+  <h2>Generar Carta</h2>
+
+  <!-- Selección de Plantilla -->
+  <div class="mb-3">
+    <label for="plantillaSelect" class="form-label">Seleccionar Plantilla</label>
+    <select class="form-select" id="plantillaSelect" [(ngModel)]="selectedPlantillaId" (change)="seleccionarPlantilla()">
+      <option *ngFor="let plantilla of plantillas" [value]="plantilla.id">{{ plantilla.nombre }}</option>
+    </select>
+  </div>
+
+  <!-- Campos del Formulario -->
+  <div class="mb-3">
+    <label for="destinatario" class="form-label">Destinatario</label>
+    <input type="text" class="form-control" id="destinatario" [(ngModel)]="context.destinatario">
+  </div>
+
+  <div class="mb-3">
+    <label for="cargoDestinatario" class="form-label">Cargo Destinatario</label>
+    <input type="text" class="form-control" id="cargoDestinatario" [(ngModel)]="context.cargoDestinatario">
+  </div>
+
+  <div class="mb-3">
+    <label for="empresaDestinatario" class="form-label">Empresa Destinatario</label>
+    <input type="text" class="form-control" id="empresaDestinatario" [(ngModel)]="context.empresaDestinatario">
+  </div>
+
+  <div class="mb-3">
+    <label for="direccionDestinatario" class="form-label">Dirección Destinatario</label>
+    <input type="text" class="form-control" id="direccionDestinatario" [(ngModel)]="context.direccionDestinatario">
+  </div>
+
+  <div class="mb-3">
+    <label for="ciudadDestinatario" class="form-label">Ciudad Destinatario</label>
+    <input type="text" class="form-control" id="ciudadDestinatario" [(ngModel)]="context.ciudadDestinatario">
+  </div>
+
+  <div class="mb-3">
+    <label for="remitente" class="form-label">Nombres</label>
+    <input type="text" class="form-control" id="remitente" [(ngModel)]="context.remitente">
+  </div>
+
+  <div class="mb-3">
+    <label for="direccionRemitente" class="form-label">Dirección</label>
+    <input type="text" class="form-control" id="direccionRemitente" [(ngModel)]="context.direccionRemitente">
+  </div>
+
+  <div class="mb-3">
+    <label for="emailRemitente" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emailRemitente" [(ngModel)]="context.emailRemitente">
+  </div>
+
+  <div class="mb-3">
+    <label for="telefonoRemitente" class="form-label">Teléfono</label>
+    <input type="tel" class="form-control" id="telefonoRemitente" [(ngModel)]="context.telefonoRemitente">
+  </div>
+
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha</label>
+    <input type="date" class="form-control" id="fecha" [(ngModel)]="context.fecha">
+  </div>
+
+  <div class="mb-3">
+    <label for="contenido" class="form-label">Contenido</label>
+    <textarea class="form-control" id="contenido" [(ngModel)]="context.contenido" rows="10"></textarea>
+  </div>
+
+  <button class="btn btn-primary" (click)="generarCarta()">Generar Carta</button>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

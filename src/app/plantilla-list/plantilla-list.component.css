@@ -1,0 +1,13 @@
+h1 {
+ text-shadow: 2px 2px 4px rgba(0,0,0,0,5);
+
+}
+
+div {
+    background: linear-gradient(45deg, #23d2f1, #ff50bc);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }

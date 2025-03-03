@@ -1,0 +1,28 @@
+<div style="background: linear-gradient(45deg, #a70101, #020202); 
+font-family: Arial, sans-serif;"  class="container mt-4">
+    <h2>{{ plantillaId ? 'Editar' : 'Crear' }} Plantilla</h2>
+    <form [formGroup]="plantillaForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" id="nombre" />
+      </div>
+      <div class="mb-3">
+        <label for="contenido" class="form-label">Contenido</label>
+        <textarea formControlName="contenido" class="form-control" id="contenido"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea formControlName="descripcion" class="form-control" id="descripcion"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+        <input type="text" formControlName="tipo" class="form-control" id="tipo" />
+      </div>
+      <div class="mb-3">
+        <label for="version" class="form-label">Versión</label>
+        <input type="text" formControlName="version" class="form-control" id="version" />
+      </div>
+      <button type="submit" class="btn btn-primary">{{ plantillaId ? 'Guardar' : 'Crear' }}</button>
+      <button routerLink="/plantillas" class="btn btn-secondary ms-2">Cancelar</button>
+    </form>
+  </div>
