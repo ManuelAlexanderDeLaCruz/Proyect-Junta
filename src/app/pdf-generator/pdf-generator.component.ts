@@ -54,14 +54,13 @@ export class PdfGeneratorComponent implements OnInit {
 
   generarPdfConHandlebars(plantilla: Plantilla, context: any): void {
     try {
-      // Compile the Handlebars template
+      
       const template = Handlebars.compile(plantilla.contenido);
 
-      // Execute the template with the provided context
+      
       const compiledHtml = template(context);
 
-      // Now you have the compiled HTML. You can use it to generate a PDF.
-      // Example using jsPDF (you will need to install jsPDF):
+      
       import('jspdf').then(jspdf => {
         const jsPDFInstance = new jspdf.default();
         jsPDFInstance.html(compiledHtml, {
@@ -70,8 +69,8 @@ export class PdfGeneratorComponent implements OnInit {
           },
           x: 10,
           y: 10,
-          width: 170, //target width in the PDF document
-          windowWidth: 650 //window width in CSS pixels
+          width: 170, 
+          windowWidth: 650 
         });
       });
 

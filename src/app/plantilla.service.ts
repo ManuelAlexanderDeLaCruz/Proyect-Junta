@@ -31,7 +31,7 @@ export class PlantillaService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  // 🔹 Nuevo método para guardar cartas
+
   guardarCarta(plantilla: Plantilla): Observable<any> {
     return this.http.post(`${this.apiUrl}/guardar-carta`, plantilla);
   }
