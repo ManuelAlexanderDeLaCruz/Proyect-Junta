@@ -55,7 +55,7 @@ export class CartaComponent implements OnInit {
     if (plantillaSeleccionada) {
       console.log("Plantilla seleccionada:", plantillaSeleccionada);
 
-      // Establecer valores predeterminados según la plantilla seleccionada
+      
       this.context.fechaDescriptiva = this.context.fechaDescriptiva || new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
       this.context.contenido = this.context.contenido || 'Contenido aún no ingresado.';
       this.context.remitente = this.context.remitente || 'No definido';
@@ -68,7 +68,7 @@ export class CartaComponent implements OnInit {
       this.context.telefonoRemitente = this.context.telefonoRemitente || 'No definido';
       this.context.observaciones = this.context.observaciones || 'Sin observaciones.';
 
-      // Asignar contenido de la plantilla
+      
       this.context.contenido = plantillaSeleccionada.contenido || ''; 
     }
   }
@@ -91,7 +91,7 @@ export class CartaComponent implements OnInit {
         return;
     }
 
-    // 📅 Ajustar fecha en formato ISO y descriptivo
+    
     const fechaISO = new Date().toISOString().split('T')[0];
     this.context.fecha = fechaISO;
     this.context.fechaDescriptiva = new Date().toLocaleDateString('es-ES', {
@@ -101,7 +101,6 @@ export class CartaComponent implements OnInit {
     });
     console.log("Contexto antes de compilar Handlebars:", JSON.stringify(this.context, null, 2));
 
-    // 📝 Compilar la plantilla con Handlebars
     console.log("Contexto antes de compilar:", this.context); // 🔍 Verificar datos antes de generar
     const template = Handlebars.compile(selectedPlantilla.contenido);
     const compiledHtml = template(this.context);
@@ -109,7 +108,7 @@ export class CartaComponent implements OnInit {
 
     console.log("HTML compilado:", compiledHtml);
 
-    // 📄 Generar PDF con jsPDF
+    
     const doc = new jsPDF();
     doc.html(compiledHtml, {
         callback: (doc) => {
