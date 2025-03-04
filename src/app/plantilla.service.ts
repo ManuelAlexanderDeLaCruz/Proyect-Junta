@@ -7,12 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PlantillaService {
-  private apiUrl = 'https://localhost:7186/api/plantillas';
+  private apiUrl = 'http://localhost:5199/api/plantillas';
 
   constructor(private http: HttpClient) {}
 
   getPlantillas(): Observable<Plantilla[]> {
-    return this.http.get<Plantilla[]>(this.apiUrl);
+     let data = this.http.get<Plantilla[]>(this.apiUrl)
+     console.log(data)
+     return data
+     
   }
 
   getPlantilla(id: number): Observable<Plantilla> {
