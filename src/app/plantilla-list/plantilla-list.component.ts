@@ -22,7 +22,7 @@ export class PlantillaListComponent implements OnInit {
       this.plantillas = plantillas;
     });
 
-    console.log("esto me llega ",this.plantillaService)
+    
   }
 
   deletePlantilla(id: number): void {
