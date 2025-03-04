@@ -21,6 +21,8 @@ export class PlantillaListComponent implements OnInit {
     this.plantillaService.getPlantillas().subscribe((plantillas) => {
       this.plantillas = plantillas;
     });
+
+    console.log("esto me llega ",this.plantillaService)
   }
 
   deletePlantilla(id: number): void {

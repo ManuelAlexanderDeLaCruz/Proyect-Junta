@@ -57,19 +57,19 @@ export class CartaComponent implements OnInit {
 
       
       this.context.fechaDescriptiva = this.context.fechaDescriptiva || new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
-      this.context.contenido = this.context.contenido || 'Contenido aún no ingresado.';
-      this.context.remitente = this.context.remitente || 'No definido';
-      this.context.cargoDestinatario = this.context.cargoDestinatario || 'No definido';
-      this.context.empresaDestinatario = this.context.empresaDestinatario || 'No definido';
-      this.context.direccionDestinatario = this.context.direccionDestinatario || 'No definido';
-      this.context.ciudadDestinatario = this.context.ciudadDestinatario || 'No definido';
-      this.context.direccionRemitente = this.context.direccionRemitente || 'No definido';
-      this.context.emailRemitente = this.context.emailRemitente || 'No definido';
-      this.context.telefonoRemitente = this.context.telefonoRemitente || 'No definido';
+      this.context.contenido = this.context.contenido || '';
+      this.context.remitente = this.context.remitente || '';
+      this.context.cargoDestinatario = this.context.cargoDestinatario || '';
+      this.context.empresaDestinatario = this.context.empresaDestinatario || '';
+      this.context.direccionDestinatario = this.context.direccionDestinatario || '';
+      this.context.ciudadDestinatario = this.context.ciudadDestinatario || '';
+      this.context.direccionRemitente = this.context.direccionRemitente || '';
+      this.context.emailRemitente = this.context.emailRemitente || '';
+      this.context.telefonoRemitente = this.context.telefonoRemitente || '';
       this.context.observaciones = this.context.observaciones || 'Sin observaciones.';
 
       
-      this.context.contenido = plantillaSeleccionada.contenido || ''; 
+       
     }
   }
 
