@@ -12,11 +12,10 @@ export class PlantillaService {
   constructor(private http: HttpClient) {}
 
   getPlantillas(): Observable<Plantilla[]> {
-     let data = this.http.get<Plantilla[]>(this.apiUrl)
-     console.log(data)
-     return data
-     
+    return this.http.get<Plantilla[]>(this.apiUrl);
   }
+     
+  
 
   getPlantilla(id: number): Observable<Plantilla> {
     return this.http.get<Plantilla>(`${this.apiUrl}/${id}`);

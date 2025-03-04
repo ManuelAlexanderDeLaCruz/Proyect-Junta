@@ -1,7 +1,6 @@
 <div class="container mt-4">
   <h2>Generar Carta</h2>
 
-  <!-- Selección de Plantilla -->
   <div class="mb-3">
     <label for="plantillaSelect" class="form-label">Seleccionar Plantilla</label>
     <select class="form-select" id="plantillaSelect" [(ngModel)]="selectedPlantillaId" (change)="seleccionarPlantilla()">
@@ -9,7 +8,6 @@
     </select>
   </div>
 
-  <!-- Campos del Formulario -->
   <div class="mb-3">
     <label for="destinatario" class="form-label">Destinatario</label>
     <input type="text" class="form-control" id="destinatario" [(ngModel)]="context.destinatario">
